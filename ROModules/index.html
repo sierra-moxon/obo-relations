@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>modules - OBO Relation Ontology</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "modules";
+    var mkdocs_page_input_path = "ROModules.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> OBO Relation Ontology</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Home/">home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Menu/">menu</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../EditingRO/">editing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../AnnotationProperty/">annotations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../DifferencesWithOldRO/">oldro</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ExtractingRelationsAsOboFormat/">extract</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Identifiers/">identifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../InteractionRelations/">interaction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../OBOFormatUsersGuide/">oboformat</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ObjectProperty/">op</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PropertyChain/">pc</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROAndBFO/">bfo</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROAndTime/">time</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROCore/">core</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">guide</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">modules</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../RONeuro/">neuron</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ShortcutRelations/">shortcuts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../SioRoBridge/">sio</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../TemporallyQualifiedContinuants/">tqcs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../UsageExamples/">usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Using-RO-in-Chado/">chado</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">causal</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../domain-or-range-specific-relation/">domainrange</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">OBO Relation Ontology</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>modules</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduction">Introduction</h1>
+<p>The current version of RO includes both general and specific relations from multiple domains. This is not ideal for many users, who typically require a small subset of these.</p>
+<h1 id="dividing-into-domain-specific-modules">Dividing into domain-specific modules</h1>
+<p>One approach would be to divide the RO into a collection of domain-specific modules - for each ro-neuro, ro-developmental-biology, etc. These modules could import one another where appropriate, and a parent ro ontology could import everything.</p>
+<p>We decided against this at this stage, since it will difficult to tell a-priori which were sensible divisions. There are many ways to partition into mutually exclusive sets - by upper level (e.g. process-process relations vs process-continuant) or by domain. Many domains overlap.</p>
+<p>We may still pre-modularize the relations at some stage in the future, but for now they are organized as a single ontology (or rather as two: with the core relations in BFO and derived and domain specific relations in RO)</p>
+<h1 id="extracting-modules">Extracting Modules</h1>
+<p>As the RO is not modularized in advanced, it would be useful for users to have ways to extract the modules they need.</p>
+<h2 id="automatic-module-extraction">Automatic Module Extraction</h2>
+<p>There are a number of ways to automatically extract a module from an ontology - the OWLAPI implements some of these.</p>
+<p>You can use the <a href="http://code.google.com/p/owltools">OWLTools</a> command line facility to access the OWLAPI and it's modularization capabilities.</p>
+<p>Using 'develops from' as a seed using the TOP strategy:</p>
+<pre><code> owltools  ro.owl --extract-module -m TOP 'develops from' -o file://`pwd`/ro-subset-part-of.owl
+</code></pre>
+<p>Using 'part of' and 'has part' and all their descendant relations:</p>
+<pre><code> owltools  ro.owl --extract-module -m STAR 'has part' 'part of' -o file://`pwd`/ro-subset-part-of.owl
+</code></pre>
+<p>Getting the right module requires an understanding of the modularization algorithm which is non-trivial - particularly where this interacts with <a href="ShortcutRelations">ShortcutRelations</a> - in future we will provide a more intuitive high-level modularization capability.</p>
+<h2 id="manual-module-extraction">Manual Module Extraction</h2>
+<p>Another method is to manually take the properties and/or related axioms one requires and copy them into the working ontology. This technique is not ideal, but the operation is relatively infrequent since most ontologies do not use large numbers of relations. This is the method that has been used in practice for GO, the drosophila anatomy, Uberon, etc.</p>
+<p>See <a href="OBOFormatUsersGuide">OBOFormatUsersGuide</a> for details</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../RONeuro/" class="btn btn-neutral float-right" title="neuron">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ROGuide/" class="btn btn-neutral" title="guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ROGuide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../RONeuro/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

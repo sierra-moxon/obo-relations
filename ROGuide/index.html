@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>guide - OBO Relation Ontology</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "guide";
+    var mkdocs_page_input_path = "ROGuide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> OBO Relation Ontology</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Home/">home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Menu/">menu</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../EditingRO/">editing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../AnnotationProperty/">annotations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../DifferencesWithOldRO/">oldro</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ExtractingRelationsAsOboFormat/">extract</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Identifiers/">identifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../InteractionRelations/">interaction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../OBOFormatUsersGuide/">oboformat</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ObjectProperty/">op</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PropertyChain/">pc</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROAndBFO/">bfo</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROAndTime/">time</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROCore/">core</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">guide</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROModules/">modules</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../RONeuro/">neuron</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ShortcutRelations/">shortcuts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../SioRoBridge/">sio</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../TemporallyQualifiedContinuants/">tqcs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../UsageExamples/">usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Using-RO-in-Chado/">chado</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">causal</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../domain-or-range-specific-relation/">domainrange</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">OBO Relation Ontology</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="intro">Intro</h1>
+<p>The Relation Ontology (RO) includes over 400 relations covering a
+variety of domains in the biological, biomedical and environmental
+sciences, making use of a wide variety of axiom types. This guide is
+intended to help navigate the structure of the RO and provide
+assistance with interpreting it.</p>
+<p>Note that we expect very few users will need to peruse the whole
+ontology in its entirety. Most people will encounter RO through some
+subset that is used within another ontology. For example, a user
+browsing <a href="http://uberon.org">Uberon</a> may see a
+<a href="http://purl.obolibrary.org/obo/RO_0002202">develops from</a> relationship
+linking two classes. Clicking on this may lead to a resource such as
+OntoBee, where more details can be found. In fact many users may not
+need to be aware of RO at all: the ontology may be used behind the
+scenes to calculate results.</p>
+<p>However, we expect some users may have a need to browse the whole
+ontology. These include ontology developers or data modelers looking
+to reuse relations. Here some additional guidance may prove useful.</p>
+<h1 id="details">Details</h1>
+<h2 id="how-to-browse-ro">How to browse RO</h2>
+<p>In order to fully comprehend RO it is necessary to inspect it using a
+tool that supports the entirety of the OWL2 language. In practice this
+means Protege 5, a desktop application.</p>
+<p>The best web-based way to browse RO is through OntoBee or
+OLS. However, RO sometimes uses constructs not supported by OntoBee or
+OLS, and sometimes OntoBee fails to display the full
+hierarchy. However, OntoBee provides one advantage over Protege: each
+relation can be browsed in the context of its usage.</p>
+<p>We recommend use of Protege, sometimes complemented by OntoBee. For
+Protege, like all OBO ontologies, the ontology should be accessed via
+its purl, i.e. http://purl.obolibrary.org/obo/ro.owl (or if you want
+to see the bleeding edge version you can check out this repo and use
+ro-edit.owl)</p>
+<p>In order to best understand RO, it helps tremendously to be familiar
+with OWL2. This advice does not necessarily hold for looking at RO
+through an application-specific prism: here the best way to view RO
+will be dictated by the application and the domain. However, when
+looking at the entire ontology understanding OWL2 will definitely
+help. At a minimum, it helps to know:</p>
+<ul>
+<li>How to read <a href="ManchesterSyntax">ManchesterSyntax</a></li>
+<li>The difference between an <a href="ObjectProperty">ObjectProperty</a> and an <a href="AnnotationProperty">AnnotationProperty</a></li>
+<li>The meaning of Object Property Characteristics, such as 'Transitive'</li>
+<li>The meaning of Object Property Axiom types, such as SubPropertyOf</li>
+<li>What a <a href="PropertyChain">PropertyChain</a> is</li>
+<li>What it means to import an ontology</li>
+</ul>
+<p>It also helps to know some of the practices of the OBO Community. For example:</p>
+<ul>
+<li><a href="http://www.biomedcentral.com/1471-2105/10/125">naming conventions</a></li>
+<li><a href="http://www.obofoundry.org/id-policy.shtml">ID policy and URI structure</a> (also: <a href="Identifiers">Identifiers</a>).</li>
+<li>Use of the IAO metadata vocabulary</li>
+</ul>
+<p>Finally, for browsing in Protege, we recommend a tutorial such as the
+Pizza tutorial. A few additional tips help:</p>
+<ul>
+<li>Hovering over an axiom reveals its ontology source (RO imports parts of other ontologies)</li>
+<li>Using a reasoner will show you entailed axioms</li>
+<li>A colored "@" means the axiom has annotations (e.g. provenance of the axiom). Click on the "@" to see these</li>
+</ul>
+<p>If at this stage you are undaunted, read on!</p>
+<h2 id="logical-design-patterns">Logical Design Patterns</h2>
+<p>RO makes use of a number of logical ontology design patterns
+(ODPs). These crop up repeatedly, so it can help to be aware of
+these. Note that each usage of an ODP should be documented directly in
+the ontology as well as here.</p>
+<h3 id="direct-and-indirect-forms-of-relations">Direct and Indirect forms of relations</h3>
+<p>The following pattern shows up a lot:</p>
+<pre><code> * &quot;&lt;R&gt;&quot;   (a Transitive OP)
+    * &quot;directly &lt;R&gt;&quot; (non-transitive)
+</code></pre>
+<p>And occasionally extended to this:</p>
+<pre><code> * &quot;&lt;R&gt;&quot;   (a Transitive OP)
+    * &quot;directly &lt;R&gt;&quot; (non-Transitive)
+    * &quot;indirectly &lt;R&gt;&quot; (Transitive)
+</code></pre>
+<p>The first thing to point out is that the structure is sometimes
+confusing to users coming from an Object-Oriented Programming
+perspective. The intuition is that characteristics of the parent
+should be inherited as characteristics of the child. In fact this is
+not the case: the direct form of a transitive relation is both a
+subproperty of the transitive form, and itself non-transitive.</p>
+<p>This can be seen with a specific example, e.g.</p>
+<ul>
+<li>http://purl.obolibrary.org/obo/RO_0002202 develops from<ul>
+<li>http://purl.obolibrary.org/obo/RO_0002207 directly develops from</li>
+</ul>
+</li>
+</ul>
+<p>Here the 'direct' prefix means that the two structures or classes
+should be in direct succession (no intermediates).</p>
+<p>Consider a structure:</p>
+<pre><code> A directly-develops-from B directly-develops-from C
+</code></pre>
+<p>(e.g. A is a limb, B is a limb bud, and C is a limb primordium).</p>
+<p>From the above, we can infer:</p>
+<pre><code> 1. A develops-from B develops-from C
+ 2. A develops-from C
+</code></pre>
+<p>(1) follows from SubPropertyOf, and (2) follows from (1) and the transitivity axiom.</p>
+<p>In RO, every usage of this ODP should have an <a href="http://purl.obolibrary.org/obo/RO_0002575">is direct form of</a> annotation; e.g. <a href="http://purl.obolibrary.org/obo/RO_0002207">directly develops from</a> is-direct-form-of 'indirectly develops from'.</p>
+<p>Note that we do not always create an indirect relation as sibling to
+the direct form. This is in part because inference of the indirect
+form can be problemmatic.</p>
+<p>Note that RO does not include a 'directly part of' relation. For a discussion see:</p>
+<p>https://keet.wordpress.com/2010/11/14/nontransitive-vs-intransitive-direct-part-whole-relations-in-owl/</p>
+<h3 id="defining-property-chains-involving-reflexivity">Defining Property Chains involving Reflexivity</h3>
+<p>The pattern here is</p>
+<pre><code> * &quot;&lt;R&gt; &lt;P&gt;&quot; &lt;- R o P
+    * &lt;R&gt;
+</code></pre>
+<p>When this ODP is used, the property chain axiom should be tagged with
+an <a href="http://purl.obolibrary.org/obo/RO_0002582">is a defining property chain axiom where second argument is reflexive</a> axiom.</p>
+<p>In this case, the parent relation is a grouping relation for query purposes. Consider:</p>
+<ul>
+<li>http://purl.obolibrary.org/obo/RO_0002177 'attached to part of'<ul>
+<li>http://purl.obolibrary.org/obo/RO_0002371 'attached to'</li>
+</ul>
+</li>
+</ul>
+<p>Consider a ligament or tendon attached to some projection P that is
+part of a bone B, that is part of the limb skeleton. We may be
+interested in all attachmed structures for any part of the body, and
+this named property chain provides a convenient way of querying for it.</p>
+<p>In all cases of this ODP, the parent property can be safely 'unfolded'
+away with no loss of information. i.e. expanded to an actual chain
+with two property expressions or assertions.</p>
+<p>The placement of the base form as a child of the parent is justified
+via the local reflexivity of the 2nd argument.</p>
+<h3 id="local-reflexivity">Local Reflexivity</h3>
+<p>In many formal treatments of relations, the Reflexivity characteristic
+is frequently used. For example, in mereology, 'part of' is frequently
+characterized as reflexive. This can seem confusing when compared
+with everyday usage (no one typically considers an object to be part
+of itself). However, it is convenient from the point of view of
+mathematical formulation. A 'proper R' sub-relation is often
+introduced, e.g. 'proper part of'.</p>
+<p>(We typically do not include a 'proper' form of the relation. This is
+because it inflates the ontology, and complicates reasoning. Also, it
+does not actually add information or provide real utility or intuition).</p>
+<p>We rarely if ever declare a relation to be reflexive. Reflexivity is
+incompatible with domain and range assertions. Consider:</p>
+<pre><code>  ObjectProperty: P
+   Characteristics: Reflexive
+   Domain: C
+  Class: C
+   DisjointWith: D
+</code></pre>
+<p>reflexivity of P literally means that every individual in the domain
+stands in a P relation to itself. This would include any instances of
+D. However, it an instance of D cannot be the subject of a P relation,
+hence D is unsatisfiable.</p>
+<p>This is rarely a concern in formal treatments, where a restricted
+domain is assumed; however, RO covers all domains so full reflexivity
+is almost always inappropriate.</p>
+<p>Instead, here we would make use of a 'local reflexivity' axiom. E.g.</p>
+<pre><code>  ObjectProperty: P
+   Domain: C
+  Class: C
+   DisjointWith: D
+   SubClassOf: P Self
+</code></pre>
+<p>In practice we may not have asserted all cases of local reflexivity (TODO: tracker link).</p>
+<h3 id="interaction-relations">Interaction Relations</h3>
+<p>It can be useful to have relations that are shortcuts for more
+detailed modeling using processes. For example, to model two organisms
+interacting, we may use an 'interaction' process, with the organisms
+linked via participation relations. We can then subclass the
+interaction process class to describe different kinds of interaction.</p>
+<p>It can also be convenient to have relations that 'shortcut' across the
+process, e.g. x interacts-with y, x phosphorylates y, x hunts y.</p>
+<p>The way we do this is via the introduction of 'helper
+properties'. Unfortunately these clog up the ontology from a browsing
+perspective, but assist with reasoning.</p>
+<p>The design pattern is documented here:
+http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29</p>
+<p>For every interaction process Proc we create as isProc ObjectProperty that is locally reflexive for any instance of Proc, ie</p>
+<pre><code>  Class: Proc
+   SubClassOf: isProc Self
+
+ ObjectProperty: isProc
+  SubPropertyOf: 'helper process'
+</code></pre>
+<p>(the subPropertyOf axiom does not affect the logic, it exists purely for aesthetic purposes)</p>
+<p>We can now define property chains using this 'fake' property, e.g.</p>
+<pre><code> ObjectProperty: RelProc
+  SubPropertyChain: 'partner in' o isProc o inv('partner in')
+</code></pre>
+<p>See also: <a href="InteractionRelations">InteractionRelations</a></p>
+<h3 id="shortcut-relations">Shortcut Relations</h3>
+<p>See: <a href="ShortcutRelations">ShortcutRelations</a></p>
+<h2 id="annotation-assertions-in-ro">Annotation Assertions in RO</h2>
+<p>In RO we aim to have comprehensive metadata for each ObjectProperty
+declared. In practice we often fall short, but this is something we
+are striving to improve.</p>
+<p>Metadata is provided via annotation assertions using annotation
+properties (APs), and other object types, from a variety of ontologies, including:</p>
+<ul>
+<li>IAO/metadata</li>
+<li>dublin core</li>
+<li>RDFS</li>
+<li>OboInOwl</li>
+</ul>
+<p>We have also defined APs within RO. Some of these may migrate to IAO.</p>
+<h3 id="definitions">Definitions</h3>
+<p>Like all OBO ontologies, definitions are provided using an
+http://purl.obolibrary.org/obo/IAO_0000115 'definition' AP.</p>
+<p>We strive to give each OP a definition. In practice we may omit
+definitions for OPs that are trivially the inverse of another defined
+OP (TODO link to tracker).</p>
+<h3 id="definition-source-and-attribution">Definition Source and Attribution</h3>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>curator notes: aimed at curator users of ontologies</li>
+<li>editor notes: primarily internal notes for other RO editors, but exposed for the sake of transparency</li>
+</ul>
+<h3 id="synonyms-and-alternate-terms">Synonyms and alternate terms</h3>
+<p>'OBO foundry unique label' is used where the primary label could potentially be ambiguous when compared to other ontologies.</p>
+<h3 id="provenance-and-attribution">Provenance and Attribution</h3>
+<p>We currently use IAO 'term editor' APs to record a literal with the
+full name of the person who added the term to the ontology.</p>
+<p>The IAO def of this is:
+"Name of editor entering the term in the file. The term editor is a point of contact for information regarding the term. The term editor may be, but is not always, the author of the definition, which may have been worked upon by several people"</p>
+<p>We may decide to use ORCIDs in future.</p>
+<p>NOTE: we have recently switched to using the created_by tag as this is
+supported directly in Protege. We need to go back and standardize use
+of some of these properties.</p>
+<h3 id="curation-status">Curation Status</h3>
+<h2 id="organization-of-relations-into-domain-modules">Organization of Relations into Domain Modules</h2>
+<p>One of the first things a user may notice on browsing RO is it
+contains a number of highly specific relations particular to
+sub-domains of science. This can be disconcerting, especially as (for
+logical reasons), the hierarchies can be mingled. For example,
+sub-relations of generic relations 'part of' or 'precedes' include
+specific neuroanatomical relations mixed with environmental relations.</p>
+<p>In general, typical users would not be exposed to this variety: a
+neuroanatomist should consume a RO module intended specifically for
+neuroanatomy. This section deals with how RO is organized into
+domains, and how these modules are extracted.</p>
+<h3 id="imports">Imports</h3>
+<p>RO imports a handful of portions of other ontologies, primarily in
+order to specify domain and range constraints.</p>
+<p>In practice, some external ontologies are not properly imported:
+portions of the ontologies are copied directly into RO. This is
+something we will resolve in future (TODO tracker link).</p>
+<p>RO uses BFO classes as an upper level ontology; this is imported from
+the RO-core module (next section):</p>
+<h3 id="rocore">RO/core</h3>
+<p>One of the most important modules in RO is the module called
+RO-core. It has its own URI:</p>
+<ul>
+<li>http://purl.obolibrary.org/obo/ro/core.owl</li>
+</ul>
+<p>And is documented separately <a href="ROCore">ROCore</a>.</p>
+<p>It can be consumed independently of RO.</p>
+<p>RO/core aims to faithfully follow the BFO2 reference document. There
+is ongoing discussion on representation of the temporal aspects of BFO.</p>
+<p>For more information see:</p>
+<ul>
+<li><a href="ROCore">ROCore</a></li>
+<li><a href="ROAndBFO">ROAndBFO</a></li>
+<li><a href="ROAndTime">ROAndTime</a></li>
+</ul>
+<h3 id="domain-specific-modules">Domain Specific Modules</h3>
+<p>We currently support two overlapping mechanisms to partition RO into
+modules according to application or domain.</p>
+<ul>
+<li>Grouping relations</li>
+<li>Subsets</li>
+</ul>
+<p>Grouping relations are OPs that form the root of a property hierarchy
+including the desired properties. For example, 'developmentally
+related to' (http://purl.obolibrary.org/obo/RO_0002324) groups all OPs
+used to specify developmental relationships between two structures.</p>
+<p>All such grouping relations should be tagged with a 'curator note'
+property describing the intent of the grouping, and warning not to use
+the OP in logical assertions.</p>
+<p>There are some objections to grouping OPs. Philosophically there are
+objections that the OP does not represent a true relationship in the
+world. However, in practice there are no negative consequences of this
+philosophical infelicity - the OP can simply be ignored. A more
+serious objection may be that the presence of these relations can slow
+down reasoning. If this turns out to be a problem we may find another
+strategy.</p>
+<p>Despite these objections, grouping relations are undeniably convenient
+for browsing in an ontology browser like Protege.</p>
+<p>With the grouping strategy, all subproperties are included in the
+group. Sometimes it is desirable to cherry pick certain OPs
+independently of the subProperty hierarchy. Here we explicitly assert
+membership in a group.</p>
+<p>Currently this is done using the 'in subset' AP from the OiO
+vocabulary. This may be changed to IAO in future, but for now use of
+this vocabulary has advantages for mapping to obo format and making
+use of OORT to build releases - subset files are generated as part of
+the release process.</p>
+<p>Currently we only have a single subset, ro-eco, but we will add more
+later, e.g. for <a href="RONeuro">RONeuro</a>. One possibility is to have an editor in
+charge of the content of each module (or at least representing a
+community of stakeholders).</p>
+<p>See also:</p>
+<ul>
+<li><a href="ROModules">ROModules</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ROModules/" class="btn btn-neutral float-right" title="modules">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ROCore/" class="btn btn-neutral" title="core"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ROCore/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ROModules/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

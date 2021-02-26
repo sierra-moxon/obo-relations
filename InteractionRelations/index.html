@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>interaction - OBO Relation Ontology</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "interaction";
+    var mkdocs_page_input_path = "InteractionRelations.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> OBO Relation Ontology</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Home/">home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Menu/">menu</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../EditingRO/">editing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../AnnotationProperty/">annotations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../DifferencesWithOldRO/">oldro</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ExtractingRelationsAsOboFormat/">extract</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Identifiers/">identifiers</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">interaction</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../OBOFormatUsersGuide/">oboformat</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ObjectProperty/">op</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PropertyChain/">pc</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROAndBFO/">bfo</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROAndTime/">time</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROCore/">core</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ROModules/">modules</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../RONeuro/">neuron</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ShortcutRelations/">shortcuts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../SioRoBridge/">sio</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../TemporallyQualifiedContinuants/">tqcs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../UsageExamples/">usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Using-RO-in-Chado/">chado</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">causal</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../domain-or-range-specific-relation/">domainrange</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">OBO Relation Ontology</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>interaction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduction">Introduction</h1>
+<p>We frequently want interaction relations to 'shadow' biological process relations. This document describes our current implementation for this.</p>
+<p>The implementation is not perfect, comments welcome</p>
+<p>NOTE: THIS DOCUMENTATION NEEDS TO BE UPDATED WHEN ONTOBEE IS BACK UP</p>
+<h1 id="details">Details</h1>
+<p>Whether dealing with biotic relations, or protein-protein interactions, we frequently have to deal with the fact that OWL forces us to choose whether model something with an instance of an object property.</p>
+<p>For example, if protein A interacts with B, this can be represented as a triple / object property assertion</p>
+<pre><code>a interactsWith b
+</code></pre>
+<p>(where a and b are instances)</p>
+<p>Or</p>
+<pre><code>ixn rdf:type Interaction
+ixn has-participant a
+ixn has-participant b
+</code></pre>
+<p>(note: not quite as simple on the class level, the first pattern may need to assert a reciprocal)</p>
+<p>Both have uses. In RO we take the process representation as being <strong>primary</strong> and shadow these as relations.</p>
+<p>Unfortunately, OWL is not expressive enough to properly interconvert between these forms. There is a way to partially express, this but unfortunately it is rather abstruse...</p>
+<h3 id="pattern">Pattern</h3>
+<p>To relationalize a process class P:</p>
+<ol>
+<li>Create a process (I think this should be property, not process) "isP"</li>
+<li>Manually place isP in the http://purl.obolibrary.org/obo/RO_0002464 'helper' hierarchy. Place as deep as possible</li>
+<li>Create an object property "P to" (e.g. interacts in protein-protein interaction with)</li>
+<li>Manually place P-to in the object property hierarchy</li>
+<li>Create a property chain axiom (see below)</li>
+<li>Declare characteristics (symmetric, transitive) as appropriate</li>
+<li>Create the inverse property, and declare the inverse. You do not need to create a property chain</li>
+</ol>
+<p>Property chain:</p>
+<pre><code>'subject participant in' o isP o inverse('target participant in') SubPropertyOf P-to
+</code></pre>
+<p><strong>Comment from Ramona:</strong> I don't know if this works if the subject and target are the same type of entities. In PCO, we need to define classes that have at least two enities of the same type that participate in the same interaction process. The instance model works well for PCO, but it would be nice to have a way to specify classes.</p>
+<h3 id="examples">Examples</h3>
+<p>TODO - fill in when OntoBee online</p>
+<p>See also GloBI:</p>
+<ul>
+<li>(1) Poelen, J. H., Simons, J. D., &amp; Mungall, C. J. (2014). Global Biotic Interactions: An open infrastructure to share and analyze species-interaction datasets. Ecological Informatics, 24, 148–159. doi:10.1016/j.ecoinf.2014.08.005</li>
+</ul>
+<h3 id="drawbacks-of-owl-pattern">Drawbacks of OWL pattern</h3>
+<ul>
+<li>complex</li>
+<li>abstruse</li>
+<li>outside EL subset of OWL (doesn't work with Elk)</li>
+</ul>
+<h3 id="future-plans">Future plans</h3>
+<p>We need a high-level way to define these, and derive OWL patterns from this (e.g. Tawny-OWL)</p>
+<p>Explore use of rule languages</p>
+<h3 id="interaction-subsets">Interaction Subsets</h3>
+<p>We make a subset of RO with every release that is just interaction relations. Subsets of this (e.g. for biotic interactions) can be made on request.</p>
+<ul>
+<li>http://purl.obolibrary.org/obo/ro/subsets/ro-interaction.owl</li>
+</ul>
+<h3 id="open-questions">Open Questions</h3>
+<p>To what extent should a relation hierarchy mirror a process hierarchy? A purist approach would be to always use processes, but it is useful in many applications to have the relational form.</p>
+<p>It would be overkill to mirror everything. Currently in molecular interactions RO has 'core' activities such as phosphorylation/kinase, uniquitination. E.g. a relation for each molecule or group that could be added or removed. This is open to discussion.</p>
+<h3 id="external-documentation">External Documentation</h3>
+<ul>
+<li>http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../OBOFormatUsersGuide/" class="btn btn-neutral float-right" title="oboformat">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Identifiers/" class="btn btn-neutral" title="identifiers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Identifiers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../OBOFormatUsersGuide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
