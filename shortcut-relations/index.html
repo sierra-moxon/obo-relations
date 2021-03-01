@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Causal - OBO Relation Ontology</title>
+  <title>Shortcut Relations - OBO Relation Ontology</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Causal";
-    var mkdocs_page_input_path = "causal-relations.md";
+    var mkdocs_page_name = "Shortcut Relations";
+    var mkdocs_page_input_path = "shortcut-relations.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -53,7 +53,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Usage</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">User Guide</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../annotation-properties/">Annotation Properties</a>
@@ -64,7 +64,9 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../identifiers/">Identifiers</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../shortcut-relations/">Shortcut Relations</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Shortcut Relations</a>
+    <ul class="current">
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
                     </li>
@@ -77,16 +79,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Modules</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../modules/">Modules Overview</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-core/">RO Core</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Causal</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -136,11 +136,11 @@
     
       
         
-          <li>Modules &raquo;</li>
+          <li>Usage &raquo;</li>
         
       
     
-    <li>Causal</li>
+    <li>Shortcut Relations</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -151,93 +151,23 @@
           <div role="main">
             <div class="section">
               
-                <p>Here we define a causal algebra for connecting two occurrents p and q
-according to the causal influence p has on q. We leave open the
-possibility of generalizing to allow p or q to be qualities.</p>
-<h2 id="formulation">Formulation</h2>
-<p>Our causal algebra is essentially a cross-product of more basic components:</p>
+                <h1 id="introduction">Introduction</h1>
+<p>Representing complex descriptions using a limited set of relations is possible, but unwieldy and complex. Some formalisms such as OBO and simple graph formalisms require the ontology to a graph with labeled nodes.</p>
+<p>Shortcut relations can be used in place of multiple relations and classes.</p>
+<h1 id="details">Details</h1>
+<p>Shortcut or macro relations are described in <a href="http://purl.obolibrary.org/obo/oboformat/spec.html#7">section 7 of the oboformat spec</a>, although in fact they are designed primarily as OWL-&gt;OWL translations.</p>
+<h1 id="examples">Examples</h1>
+<h1 id="implementation">Implementation</h1>
+<p>Available as part of</p>
 <ul>
-<li><code>T</code>: An Interval Algebra</li>
-<li><code>I</code>: A simple set of influence types</li>
-<li><code>D</code>: Directionalities</li>
+<li>http://code.google.com/p/oboformat basic reference obo2owl converter</li>
+<li><a href="http://code.google.com/p/owltools/wiki/OortIntro">Oort</a> the OBO ontology release tool</li>
 </ul>
-<p>The named relations are drawn from <code>T x I x D</code></p>
-<h2 id="t-interval-algebra">T: Interval Algebra</h2>
-<p>Note that RO already contains temporal relations for ordering
-occurrents. This is different from the Allen Algebra, as we take
-different relations as primitive.</p>
-<h2 id="i-influence">I: Influence</h2>
-<p>Influence pertains to whether or not the causal relation is regulatory; direction pertains to the directionality of the change of magnitude of the target.</p>
-<p>The influence is either regulatory or non-regulatory</p>
-<pre><code>I = {R,N}
-</code></pre>
-<p>A regulatory influence (R) is a causal relation that can be switched on or off to achieve some objective: for example, a cell regulating levels of a cytosolic chemical through the switching off of a GTPase with a GTPase inhibitor. A non-regulatory influence (N) is the complement of this, and is exemplified by two successive steps in a pathway, where the output of the first is required as input for the second. Although the relationship is causal, it is not regulatory as the required input for the second step is not purposefully withheld (or provided); the cell does not use this as a control mechanism.</p>
-<p>(Note that we assume influence one way or another; the algebra does not permit non-influential/causal relations; these could be done separately using Allen).</p>
-<p>The following primitive rules hold:</p>
+<p>Note that Oort can take OWL ontologies as input. It gives you the option of expanding macros in place (replacement strategy) or generating a separate external ontology of General Class Inclusion (GCI) axioms</p>
+<h1 id="references">References</h1>
 <ul>
-<li><code>R o R → R</code></li>
-<li><code>R o N → R</code></li>
-<li><code>N o R → R</code></li>
-<li><code>N o N → N</code></li>
+<li>Chris Mungall, David Osumi-Sutherland, Alan Ruttenberg <a href="http://precedings.nature.com/documents/5292/version/2">Taking shortcuts with OWL using safe macros</a> June 2010</li>
 </ul>
-<p>i.e. regulation is ‘infectious’. Note this may seem excessively permissive: a single regulatory link in a very long chain of causal relations renders the entire chain causal. We leave it to individual applications to determine both the degree of causal influence and the extend to which a regulatory component contributes. This may be via probabilistic or quantitive reasoning. This is outside the scope of this symbolic boolean algebra which seeks merely to determine logical potential.</p>
-<h2 id="direction">Direction</h2>
-<p>The direction is positive, negative or undeclared/neutral/generic</p>
-<pre><code>Direction = {+1, -1, 0}
-</code></pre>
-<p>Although all actual regulatory relationships have a direction, we include the zero state here to assist with defining a formalism that accounts for unknown states.</p>
-<p>The primitive property chains are obtained through arithmetic multiplication; e.g. </p>
-<pre><code>+1 ∘ +1 → +1
-+1 ∘ -1 → -1
--1 ∘ +1 → -1
--1 ∘ -1 → +1
- 0 ∘ _   → 0
-_  ∘ 0   → 0
-</code></pre>
-<p>Here ‘_’ is a wildcard, and direction can be inserted. </p>
-<h2 id="directness">Directness</h2>
-<p>For any pair of atomic activities p and q, if p has some
-causal influence on q then it can only stand in two possible
-directness relationships to q</p>
-<ul>
-<li>D (aka direct): if there is a physical interaction involving participants of p and q</li>
-<li>I (aka indirect): p precedes q, if there is NO physical interaction involving participants of p and q</li>
-</ul>
-<h2 id="cross-product">Cross-Product</h2>
-<p>Our set of causal relations is therefore drawn from</p>
-<pre><code>T ×  I ×  D
-</code></pre>
-<p>The following names are used for members of the cross-product</p>
-<ul>
-<li><code>directly positively regulates → &lt;D,R,+1&gt;</code></li>
-<li><code>directly negatively regulates → &lt;D,R,-1&gt;</code></li>
-<li><code>indirectly positively regulates → &lt;I,R,+1&gt;</code></li>
-<li><code>indirectly negatively regulates → &lt;I,R,-1&gt;</code></li>
-<li><code>regulates → &lt;*,R,0&gt;</code></li>
-<li><code>positively regulates → &lt;*,R,+1&gt;</code></li>
-<li><code>negatively regulates → &lt;*,R,-1&gt;</code></li>
-<li><code>directly provides input for → &lt;D,N,+1&gt;</code></li>
-<li><code>indirectly provides input for → &lt;I,N,+1&gt;</code></li>
-<li><code>provides input for → &lt;*,N,+1&gt;</code></li>
-<li><code>immediately causally upstream of → &lt;D,*,0&gt;</code></li>
-</ul>
-<p>TODO: add PURLs for the above.</p>
-<p>Note that unidirectional implication is used to leave open the use of different terms for the same members of the cross-product when applied to different domains.</p>
-<p>We also use the following sub-relations when both p and q are elemental (in the case of GO, these are GO MFs):</p>
-<ul>
-<li>directly activates → <D,R,+1></li>
-<li>directly inhibits → <D,R,-1></li>
-<li>indirectly activates → <I,R,+1></li>
-<li>indirectly inhibits → <I,R,-1></li>
-</ul>
-<h3 id="composition-rules">Composition rules</h3>
-<p>Composition rules for the cross-product follow naturally from the individual composition rules of the individual elements.</p>
-<p>We can also derive:</p>
-<ul>
-<li><code>regulates o part_of → regulates</code> (DEPRECATED)</li>
-<li><code>ends_with o regulates → regulates</code> </li>
-</ul>
-<p>The first follows from our rules above:  processual part of is <P,*,*> (if p is part of q it is playing some causal role in it). So we have &lt;<em>,R,0&gt; o <P,*,*> →  &lt;</em>,R,0&gt;.</p>
               
             </div>
           </div>
@@ -245,10 +175,10 @@ directness relationships to q</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ro-sio-bridge/" class="btn btn-neutral float-right" title="SIO">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../examples/" class="btn btn-neutral float-right" title="Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ro-neuro/" class="btn btn-neutral" title="RO Neuron"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../identifiers/" class="btn btn-neutral" title="Identifiers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -274,10 +204,10 @@ directness relationships to q</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ro-neuro/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../identifiers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ro-sio-bridge/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../examples/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
