@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Identifiers - OBO Relation Ontology</title>
+  <title>Quickstart - OBO Relation Ontology</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Identifiers";
-    var mkdocs_page_input_path = "identifiers.md";
+    var mkdocs_page_name = "Quickstart";
+    var mkdocs_page_input_path = "quickstart.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -48,16 +48,32 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <p class="caption"><span class="caption-text">Basics</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../quickstart/">Quickstart</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Quickstart</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#for-curators">For curators</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#for-developers">For developers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#for-owl-experts">For OWL experts</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-guide-to-basic-concepts">Quick Guide to Basic Concepts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#shortcut-relations">Shortcut Relations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modularization">Modularization</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../history/">History</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Guide</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../owl/">OWL Concepts</a>
@@ -68,7 +84,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../property-chains/">Property Chains</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Identifiers</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../identifiers/">Identifiers</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../shortcut-relations/">Shortcut Relations</a>
                     </li>
@@ -146,11 +162,11 @@
     
       
         
-          <li>Guide &raquo;</li>
+          <li>Basics &raquo;</li>
         
       
     
-    <li>Identifiers</li>
+    <li>Quickstart</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -161,32 +177,32 @@
           <div role="main">
             <div class="section">
               
-                <p>Each relation in RO is uniquely identifier by a URI of the form http://purl.obolibrary.org/obo/RO_nnnnnnn</p>
-<p>Examples:</p>
+                <h1 id="quick-start">Quick start</h1>
+<h2 id="for-curators">For curators</h2>
+<p>RO is a large ontology covering both generic relations, and relations specific to various domains such as ecology or neuroscience.</p>
+<p>It is unlikely you will need all of RO. For a given task, there may be a specific subset defined. For example:</p>
 <ul>
-<li>http://purl.obolibrary.org/obo/RO_0002215 capable of</li>
-<li>http://purl.obolibrary.org/obo/RO_0000302 downstream in neural circuit with</li>
+<li>For use in relating gene products to GO terms, the GPAD standard defines a set of allowed relations</li>
+<li>For use in causal interaction graphs, the MI2CAST standard provides recommendations of sets to use</li>
+<li>For individual ontologies, Design Patterns will show which relations can be used for different types of terms</li>
 </ul>
-<p>Each of these URIs has a corresponding OBO-identifier short form RO:nnnnnnn</p>
-<p>Note that in OBO-format, use of a shorthand is permitted. For example, in:</p>
-<pre><code>[Term]
-id: GO:2001284
-name: regulation of BMP secretion
-intersection_of: GO:0065007 ! biological regulation
-intersection_of: regulates GO:0038055 ! BMP secretion
-
-...
-
-[Typedef]
-id: regulates
-name: regulates
-transitive_over: part_of ! part_of
-xref: RO:0002211
-</code></pre>
-<p>The equivalence axiom is translated to OWL as:</p>
-<pre><code>EquivalentClasses(GO_2001284 ObjectIntersectionOf(GO_0065007 ObjectSomeValuesFrom(RO_0002211 GO_0038055)))
-</code></pre>
-<p>see <a href="http://purl.obolibrary.org/obo/oboformat/spec.html#8.2.2">Section 8.2.2 of the obo-format specification</a> for details</p>
+<p>In these cases, it is often best to start by looking at the more specific documentation.</p>
+<p>If your curation use case is not covered by an existing standard or ontology, then consult this reference to get a better understanding of RO. We recommend coordinating with others to define a particular subset. One way to start is to describe your use case on the RO tracker.</p>
+<h2 id="for-developers">For developers</h2>
+<p>TODO</p>
+<h2 id="for-owl-experts">For OWL experts</h2>
+<p>RO is a rich OWL ontology that makes use of many different OWL constructs, as well as SWRL. You may wish to start with the design pattern documentation here.</p>
+<h2 id="quick-guide-to-basic-concepts">Quick Guide to Basic Concepts</h2>
+<h3 id="shortcut-relations">Shortcut Relations</h3>
+<p>RO includes a number of <em>macro</em> or <em>shortcut</em> relations. E.g</p>
+<ul>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002215">capable of</a></li>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002110">has postynaptic terminal in</a></li>
+</ul>
+<p>For more information, see <a href="shortcut-relations">ShortcutRelations</a></p>
+<h3 id="modularization">Modularization</h3>
+<p>RO combines multiple relations from different biological sub-domains into one ontology. Sometimes these relations are very specialized and of limited use outside that domain. For more on extracting specific modules, see:</p>
+<p>See <a href="modules">modules</a>.</p>
               
             </div>
           </div>
@@ -194,10 +210,10 @@ xref: RO:0002211
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../shortcut-relations/" class="btn btn-neutral float-right" title="Shortcut Relations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../history/" class="btn btn-neutral float-right" title="History">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../property-chains/" class="btn btn-neutral" title="Property Chains"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -223,10 +239,10 @@ xref: RO:0002211
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../property-chains/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../shortcut-relations/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../history/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

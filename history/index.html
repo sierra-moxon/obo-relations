@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Identifiers - OBO Relation Ontology</title>
+  <title>History - OBO Relation Ontology</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Identifiers";
-    var mkdocs_page_input_path = "identifiers.md";
+    var mkdocs_page_name = "History";
+    var mkdocs_page_input_path = "history.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -48,16 +48,24 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <p class="caption"><span class="caption-text">Basics</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../quickstart/">Quickstart</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../history/">History</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">History</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#2005-ro-paper">2005 RO Paper</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ro-and-bfo">RO and BFO</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#current-development">Current development</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Guide</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../owl/">OWL Concepts</a>
@@ -68,7 +76,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../property-chains/">Property Chains</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Identifiers</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../identifiers/">Identifiers</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../shortcut-relations/">Shortcut Relations</a>
                     </li>
@@ -146,11 +154,11 @@
     
       
         
-          <li>Guide &raquo;</li>
+          <li>Basics &raquo;</li>
         
       
     
-    <li>Identifiers</li>
+    <li>History</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -161,32 +169,27 @@
           <div role="main">
             <div class="section">
               
-                <p>Each relation in RO is uniquely identifier by a URI of the form http://purl.obolibrary.org/obo/RO_nnnnnnn</p>
-<p>Examples:</p>
+                <h1 id="history">History</h1>
+<h2 id="2005-ro-paper">2005 RO Paper</h2>
+<p>The origins of RO are with the 2005 paper <a href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2005-6-5-r46">Relations in Biomedical
+Ontologies</a>,
+which defined a core set of relations such as <strong>is a</strong> and <strong>part of</strong>.</p>
+<p>This ontology was transcribed into an ontology which was originally
+called <strong>OBO_REL</strong>. <strong>Note that this original version is obsolete, and
+there are substantial differences with the current RO</strong>. For a detailed description see <a href="../changes-since-2005-paper">changes to RO since the 2005 paper</a></p>
+<h2 id="ro-and-bfo">RO and BFO</h2>
+<p>Many relations in RO are generic and can be used in other domains. One
+idea originally proposed was to cede the <em>core</em> relations to the Basic
+Formal Ontology (BFO). However, we later decided to retain all
+relations in RO. Note however that a small handful of RO relations
+retain a BFO ID space, for example, BFO:0000050 (part of). However,
+these are in fact part of RO, the IDs have been "donated".</p>
+<p>For more details see:</p>
 <ul>
-<li>http://purl.obolibrary.org/obo/RO_0002215 capable of</li>
-<li>http://purl.obolibrary.org/obo/RO_0000302 downstream in neural circuit with</li>
+<li><a href="../ro-and-bfo">RO and BFO</a>.</li>
+<li><a href="../ro-core">RO Core</a>.</li>
 </ul>
-<p>Each of these URIs has a corresponding OBO-identifier short form RO:nnnnnnn</p>
-<p>Note that in OBO-format, use of a shorthand is permitted. For example, in:</p>
-<pre><code>[Term]
-id: GO:2001284
-name: regulation of BMP secretion
-intersection_of: GO:0065007 ! biological regulation
-intersection_of: regulates GO:0038055 ! BMP secretion
-
-...
-
-[Typedef]
-id: regulates
-name: regulates
-transitive_over: part_of ! part_of
-xref: RO:0002211
-</code></pre>
-<p>The equivalence axiom is translated to OWL as:</p>
-<pre><code>EquivalentClasses(GO_2001284 ObjectIntersectionOf(GO_0065007 ObjectSomeValuesFrom(RO_0002211 GO_0038055)))
-</code></pre>
-<p>see <a href="http://purl.obolibrary.org/obo/oboformat/spec.html#8.2.2">Section 8.2.2 of the obo-format specification</a> for details</p>
+<h2 id="current-development">Current development</h2>
               
             </div>
           </div>
@@ -194,10 +197,10 @@ xref: RO:0002211
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../shortcut-relations/" class="btn btn-neutral float-right" title="Shortcut Relations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../introduction/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../property-chains/" class="btn btn-neutral" title="Property Chains"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../quickstart/" class="btn btn-neutral" title="Quickstart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -223,10 +226,10 @@ xref: RO:0002211
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../property-chains/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../quickstart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../shortcut-relations/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../introduction/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

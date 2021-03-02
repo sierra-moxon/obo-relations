@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Defining Property Chains involving Reflexivity - OBO Relation Ontology</title>
+  <title>Reflexivity - OBO Relation Ontology</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Defining Property Chains involving Reflexivity";
+    var mkdocs_page_name = "Reflexivity";
     var mkdocs_page_input_path = "reflexivity.md";
     var mkdocs_page_url = null;
   </script>
@@ -51,12 +51,16 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quickstart/">Quickstart</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../history/">History</a>
+                    </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Usage</span></p>
+                <p class="caption"><span class="caption-text">Guide</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
                     </li>
-                    <li class="toctree-l1"><a class="" href="../ROGuide.md">User Guide</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../owl/">OWL Concepts</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../annotation-properties/">Annotation Properties</a>
                     </li>
@@ -74,8 +78,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Design Patterns</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../design-patterns/">Design Patterns</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../design-patterns/">Design Patterns Overview</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Reflexivity</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#defining-property-chains-involving-reflexivity">Defining Property Chains involving Reflexivity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#local-reflexivity">Local Reflexivity</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../direct-and-indirect-relations/">Direct and Indirect Relations</a>
                     </li>
@@ -139,8 +151,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Design Patterns &raquo;</li>
+        
+      
     
-    <li>Defining Property Chains involving Reflexivity</li>
+    <li>Reflexivity</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -151,10 +167,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="defining-property-chains-involving-reflexivity">Defining Property Chains involving Reflexivity</h1>
-<p>The pattern here is</p>
-<pre><code> * &quot;&lt;R&gt; &lt;P&gt;&quot; &lt;- R o P
-    * &lt;R&gt;
+                <h1 id="reflexivity-in-ro">Reflexivity in RO</h1>
+<h2 id="defining-property-chains-involving-reflexivity">Defining Property Chains involving Reflexivity</h2>
+<p>When defining property chains over <em>R</em> and <em>R2</em> we typically name this according to the composition and include an axiom:</p>
+<pre><code>ObjectProperty: {R}_{R2}
+  SubObjectPropertyOf: R o R2
+</code></pre>
+<p>we may also want to make this a reflexive property chain:</p>
+<pre><code>ObjectProperty: R
+  SubObjectPropertyOf: {R}_{R2}
+
 </code></pre>
 <p>When this ODP is used, the property chain axiom should be tagged with
 an <a href="http://purl.obolibrary.org/obo/RO_0002582">is a defining property chain axiom where second argument is reflexive</a> axiom.</p>
@@ -213,6 +235,15 @@ is almost always inappropriate.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../direct-and-indirect-relations/" class="btn btn-neutral float-right" title="Direct and Indirect Relations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../design-patterns/" class="btn btn-neutral" title="Design Patterns Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -235,6 +266,10 @@ is almost always inappropriate.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../design-patterns/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../direct-and-indirect-relations/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
