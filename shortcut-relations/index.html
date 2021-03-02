@@ -54,7 +54,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Usage</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">User Guide</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../ROGuide.md">User Guide</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../annotation-properties/">Annotation Properties</a>
                     </li>
@@ -66,6 +68,14 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Shortcut Relations</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#details">Details</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
@@ -75,7 +85,11 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Design Patterns</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../interaction-relations/">interaction</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../design-patterns/">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../direct-and-indirect-relations/">Direct and Indirect Relations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../interaction-relations/">Interaction Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Modules</span></p>
@@ -86,7 +100,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -151,20 +165,20 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="introduction">Introduction</h1>
+                <h1 id="shortcut-relations">Shortcut Relations</h1>
 <p>Representing complex descriptions using a limited set of relations is possible, but unwieldy and complex. Some formalisms such as OBO and simple graph formalisms require the ontology to a graph with labeled nodes.</p>
 <p>Shortcut relations can be used in place of multiple relations and classes.</p>
-<h1 id="details">Details</h1>
+<h2 id="details">Details</h2>
 <p>Shortcut or macro relations are described in <a href="http://purl.obolibrary.org/obo/oboformat/spec.html#7">section 7 of the oboformat spec</a>, although in fact they are designed primarily as OWL-&gt;OWL translations.</p>
-<h1 id="examples">Examples</h1>
-<h1 id="implementation">Implementation</h1>
+<h2 id="examples">Examples</h2>
+<h2 id="implementation">Implementation</h2>
 <p>Available as part of</p>
 <ul>
 <li>http://code.google.com/p/oboformat basic reference obo2owl converter</li>
 <li><a href="http://code.google.com/p/owltools/wiki/OortIntro">Oort</a> the OBO ontology release tool</li>
 </ul>
 <p>Note that Oort can take OWL ontologies as input. It gives you the option of expanding macros in place (replacement strategy) or generating a separate external ontology of General Class Inclusion (GCI) axioms</p>
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <ul>
 <li>Chris Mungall, David Osumi-Sutherland, Alan Ruttenberg <a href="http://precedings.nature.com/documents/5292/version/2">Taking shortcuts with OWL using safe macros</a> June 2010</li>
 </ul>

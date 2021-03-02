@@ -54,9 +54,29 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Usage</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">User Guide</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../ROGuide.md">User Guide</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Annotation Properties</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#annotation-properties-in-ro">Annotation Properties in RO</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definitions">Definitions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-source-and-attribution">Definition Source and Attribution</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#synonyms-and-alternate-terms">Synonyms and alternate terms</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#provenance-and-attribution">Provenance and Attribution</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#curation-status">Curation Status</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../object-properties/">Object Properties</a>
                     </li>
@@ -73,7 +93,11 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Design Patterns</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../interaction-relations/">interaction</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../design-patterns/">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../direct-and-indirect-relations/">Direct and Indirect Relations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../interaction-relations/">Interaction Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Modules</span></p>
@@ -84,7 +108,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -149,13 +173,51 @@
           <div role="main">
             <div class="section">
               
-                <p>In OWL Annotation Properties are 'non-logical' properties that connect individuals, classes, ObjectProperty, other annotation properties etc with other object or with literal values. Technically, it connects the IRI of these entities.</p>
+                <h1 id="annotation-properties">Annotation Properties</h1>
+<p>In OWL Annotation Properties are 'non-logical' properties that connect individuals, classes, ObjectProperty, other annotation properties etc with other object or with literal values. Technically, it connects the IRI of these entities.</p>
 <p>The 'non-logical' aspect means they are ignored for reasoning purposes.</p>
 <p>They are primarily used for metadata: labels, definitions, synonyms, attribution, notes and comments, etc.</p>
 <p>See the <a href="http://www.w3.org/TR/owl2-primer/#Modeling_Knowledge:_Basic_Notions">OWL Primer</a> for more details.</p>
+<h2 id="annotation-properties-in-ro">Annotation Properties in RO</h2>
 <p>RO makes use of annotation properties from other ontologies (e.g. RDFS, IAO) and in addition defines annotation properties that can be used in other ontologies.</p>
 <p>See <a href="http://www.ontobee.org/browser/term.php?o=RO&amp;iri=http://www.w3.org/2002/07/owl%23AnnotationProperty&amp;graph=http://purl.obolibrary.org/obo/merged/RO">flat list of RO annotation properties in OntoBee</a></p>
 <p>Or start from a root annotation property, e.g. http://purl.obolibrary.org/obo/RO_0002416</p>
+<p>In RO we aim to have comprehensive metadata for each ObjectProperty
+declared. In practice we often fall short, but this is something we
+are striving to improve.</p>
+<p>Metadata is provided via annotation assertions using annotation
+properties (APs), and other object types, from a variety of ontologies, including:</p>
+<ul>
+<li>IAO/metadata</li>
+<li>dublin core</li>
+<li>RDFS</li>
+<li>OboInOwl</li>
+</ul>
+<p>We have also defined APs within RO. Some of these may migrate to IAO.</p>
+<h3 id="definitions">Definitions</h3>
+<p>Like all OBO ontologies, definitions are provided using an
+http://purl.obolibrary.org/obo/IAO_0000115 'definition' AP.</p>
+<p>We strive to give each OP a definition. In practice we may omit
+definitions for OPs that are trivially the inverse of another defined
+OP (TODO link to tracker).</p>
+<h3 id="definition-source-and-attribution">Definition Source and Attribution</h3>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>curator notes: aimed at curator users of ontologies</li>
+<li>editor notes: primarily internal notes for other RO editors, but exposed for the sake of transparency</li>
+</ul>
+<h3 id="synonyms-and-alternate-terms">Synonyms and alternate terms</h3>
+<p>'OBO foundry unique label' is used where the primary label could potentially be ambiguous when compared to other ontologies.</p>
+<h3 id="provenance-and-attribution">Provenance and Attribution</h3>
+<p>We currently use IAO 'term editor' APs to record a literal with the
+full name of the person who added the term to the ontology.</p>
+<p>The IAO def of this is:
+"Name of editor entering the term in the file. The term editor is a point of contact for information regarding the term. The term editor may be, but is not always, the author of the definition, which may have been worked upon by several people"</p>
+<p>We may decide to use ORCIDs in future.</p>
+<p>NOTE: we have recently switched to using the created_by tag as this is
+supported directly in Protege. We need to go back and standardize use
+of some of these properties.</p>
+<h3 id="curation-status">Curation Status</h3>
               
             </div>
           </div>
@@ -166,7 +228,7 @@
         <a href="../object-properties/" class="btn btn-neutral float-right" title="Object Properties">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ROGuide/" class="btn btn-neutral" title="User Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -192,7 +254,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ROGuide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../object-properties/" style="color: #fcfcfc">Next &raquo;</a></span>

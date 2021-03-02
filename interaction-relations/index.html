@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>interaction - OBO Relation Ontology</title>
+  <title>Interaction Relations - OBO Relation Ontology</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "interaction";
+    var mkdocs_page_name = "Interaction Relations";
     var mkdocs_page_input_path = "interaction-relations.md";
     var mkdocs_page_url = null;
   </script>
@@ -54,7 +54,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Usage</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">User Guide</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../ROGuide.md">User Guide</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../annotation-properties/">Annotation Properties</a>
                     </li>
@@ -73,8 +75,30 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Design Patterns</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">interaction</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../design-patterns/">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../direct-and-indirect-relations/">Direct and Indirect Relations</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Interaction Relations</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#details">Details</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pattern">Pattern</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#drawbacks-of-owl-pattern">Drawbacks of OWL pattern</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#future-plans">Future plans</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interaction-subsets">Interaction Subsets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#open-questions">Open Questions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#external-documentation">External Documentation</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -86,7 +110,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -140,7 +164,7 @@
         
       
     
-    <li>interaction</li>
+    <li>Interaction Relations</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -153,9 +177,31 @@
               
                 <h1 id="introduction">Introduction</h1>
 <p>We frequently want interaction relations to 'shadow' biological process relations. This document describes our current implementation for this.</p>
-<p>The implementation is not perfect, comments welcome</p>
-<p>NOTE: THIS DOCUMENTATION NEEDS TO BE UPDATED WHEN ONTOBEE IS BACK UP</p>
-<h1 id="details">Details</h1>
+<p>It can be useful to have relations that are shortcuts for more
+detailed modeling using processes. For example, to model two organisms
+interacting, we may use an 'interaction' process, with the organisms
+linked via participation relations. We can then subclass the
+interaction process class to describe different kinds of interaction.</p>
+<p>It can also be convenient to have relations that 'shortcut' across the
+process, e.g. x interacts-with y, x phosphorylates y, x hunts y.</p>
+<p>The way we do this is via the introduction of 'helper
+properties'. Unfortunately these clog up the ontology from a browsing
+perspective, but assist with reasoning.</p>
+<p>The design pattern is documented here:
+http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29</p>
+<p>For every interaction process Proc we create as isProc ObjectProperty that is locally reflexive for any instance of Proc, ie</p>
+<pre><code>  Class: Proc
+   SubClassOf: isProc Self
+
+ ObjectProperty: isProc
+  SubPropertyOf: 'helper process'
+</code></pre>
+<p>(the subPropertyOf axiom does not affect the logic, it exists purely for aesthetic purposes)</p>
+<p>We can now define property chains using this 'fake' property, e.g.</p>
+<pre><code> ObjectProperty: RelProc
+  SubPropertyChain: 'partner in' o isProc o inv('partner in')
+</code></pre>
+<h2 id="details">Details</h2>
 <p>Whether dealing with biotic relations, or protein-protein interactions, we frequently have to deal with the fact that OWL forces us to choose whether model something with an instance of an object property.</p>
 <p>For example, if protein A interacts with B, this can be represented as a triple / object property assertion</p>
 <pre><code>a interactsWith b
@@ -221,7 +267,7 @@ ixn has-participant b
         <a href="../modules/" class="btn btn-neutral float-right" title="Modules Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../domain-or-range-specific-relation/" class="btn btn-neutral" title="Domain and Ranges"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../direct-and-indirect-relations/" class="btn btn-neutral" title="Direct and Indirect Relations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -247,7 +293,7 @@ ixn has-participant b
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../domain-or-range-specific-relation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../direct-and-indirect-relations/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../modules/" style="color: #fcfcfc">Next &raquo;</a></span>

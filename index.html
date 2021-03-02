@@ -51,11 +51,11 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Index</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#browsing">Browsing</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#download">Download</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#browse">Browse</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#mail-list">Mail List</a>
     </li>
@@ -76,7 +76,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Usage</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="ROGuide/">User Guide</a>
+                    <li class="toctree-l1"><a class="reference internal" href="introduction/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="ROGuide.md">User Guide</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="annotation-properties/">Annotation Properties</a>
                     </li>
@@ -95,7 +97,11 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Design Patterns</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="interaction-relations/">interaction</a>
+                    <li class="toctree-l1"><a class="reference internal" href="design-patterns/">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="direct-and-indirect-relations/">Direct and Indirect Relations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="interaction-relations/">Interaction Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Modules</span></p>
@@ -106,7 +112,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="causal-relations/">Causal</a>
+                    <li class="toctree-l1"><a class="reference internal" href="causal-relations/">Causal Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -175,10 +181,17 @@
 <p><img alt="img" src="http://obofoundry.org/images/ro_logo.png" /></p>
 <p>This is the documentation for the OBO Relation Ontology (RO)</p>
 <ul>
-<li>This documentation: <a href="http://oborel.github.io/obo-relations/">http://oborel.github.io/obo-relations/</a></li>
+<li>Website: <a href="https://oborel.github.io/">https://oborel.github.io/</a></li>
+<li>This documentation: <a href="https://oborel.github.io/obo-relations/">https://oborel.github.io/obo-relations/</a></li>
 <li>GitHub project: <a href="https://github.com/oborel/obo-relations/">https://github.com/oborel/obo-relations/</a></li>
 <li>OBO Page: <a href="http://obofoundry.org/ontology/ro">http://obofoundry.org/ontology/ro</a></li>
 </ul>
+<h2 id="browsing">Browsing</h2>
+<ul>
+<li>Browse on OLS: <a href="https://www.ebi.ac.uk/ols/ontologies/ro">OLS</a> (click properties tab)</li>
+<li>Browse on OntoBee: <a href="http://www.ontobee.org/ontology/RO">OntoBee</a></li>
+</ul>
+<p>Currently the optimal way to browse RO is to download Protege and <a href="http://purl.obolibrary.org/obo/ro.owl">load the owl files</a></p>
 <h2 id="summary">Summary</h2>
 <p>RO is a collection of relations intended primarily for standardization across ontologies in the <a href="http://obofoundry.org">OBO Foundry</a> and wider OBO library. It incorporates <a href="ROCore">core</a> upper-level relations such as <a href="http://purl.obolibrary.org/obo/BFO_0000050">part of (BFO:0000050)</a> as well as biology-specific relationship types such as <a href="http://purl.obolibrary.org/obo/RO_0002202">develops from (RO:0002202)</a>.</p>
 <h2 id="download">Download</h2>
@@ -188,9 +201,6 @@
 <li>http://purl.obolibrary.org/obo/ro.obo</li>
 </ul>
 <p>Note that the source ontology is OWL - the <a href="OBOFormatUsersGuide">OBO</a> version may have less axioms. Another difference between the two formats is that the OWL makes use of imports, whereas everything is combined into one with the obo file.</p>
-<h2 id="browse">Browse</h2>
-<p>Currently the optimal way to browse RO is to use Protege and inspect ro.owl</p>
-<p>See the <a href="http://www.ontobee.org/browser/term.php?o=RO&amp;iri=http://www.w3.org/2002/07/owl%23ObjectProperty&amp;graph=http://purl.obolibrary.org/obo/merged/RO">list of relations on OntoBee</a> -- note that sometimes OntoBee fails to display the full hierarchy</p>
 <h2 id="mail-list">Mail List</h2>
 <ul>
 <li><a href="http://groups.google.com/group/obo-relations">google group</a></li>
@@ -220,7 +230,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ROGuide/" class="btn btn-neutral float-right" title="User Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="introduction/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -248,7 +258,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="ROGuide/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="introduction/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

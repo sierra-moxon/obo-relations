@@ -54,13 +54,19 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Usage</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../ROGuide/">User Guide</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../ROGuide.md">User Guide</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../annotation-properties/">Annotation Properties</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../object-properties/">Object Properties</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Property Chains</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#property-chains-in-ro">Property Chains in RO</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../identifiers/">Identifiers</a>
                     </li>
@@ -73,7 +79,11 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Design Patterns</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../interaction-relations/">interaction</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../design-patterns/">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../direct-and-indirect-relations/">Direct and Indirect Relations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../interaction-relations/">Interaction Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Modules</span></p>
@@ -84,7 +94,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -149,7 +159,8 @@
           <div role="main">
             <div class="section">
               
-                <p>Property chains are rules written like this:</p>
+                <h1 id="property-chains">Property Chains</h1>
+<p>Property chains are rules written like this:</p>
 <pre><code>R &lt;- S o T
 </code></pre>
 <p>Here the 'o' is the composition operator. This means that an 'S' edge followed by a 'T' edge implies an R edge spanning both.</p>
@@ -162,6 +173,7 @@ THEN
   x R z
 </code></pre>
 <p>Note the converse is not implied.</p>
+<h2 id="property-chains-in-ro">Property Chains in RO</h2>
 <p>RO makes frequent use of property chains. See <a href="ROGuide">ROGuide</a> for more details</p>
               
             </div>

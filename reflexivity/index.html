@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Causal Relations - OBO Relation Ontology</title>
+  <title>Defining Property Chains involving Reflexivity - OBO Relation Ontology</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Causal Relations";
-    var mkdocs_page_input_path = "causal-relations.md";
+    var mkdocs_page_name = "Defining Property Chains involving Reflexivity";
+    var mkdocs_page_input_path = "reflexivity.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -83,16 +83,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Modules</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../modules/">Modules Overview</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-core/">RO Core</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../ro-neuro/">RO Neuron</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Causal Relations</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../causal-relations/">Causal Relations</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Mappings</span></p>
@@ -141,12 +139,8 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Modules &raquo;</li>
-        
-      
     
-    <li>Causal Relations</li>
+    <li>Defining Property Chains involving Reflexivity</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -157,106 +151,67 @@
           <div role="main">
             <div class="section">
               
-                <p>Here we define a causal algebra for connecting two occurrents p and q
-according to the causal influence p has on q. We leave open the
-possibility of generalizing to allow p or q to be qualities.</p>
-<h2 id="formulation">Formulation</h2>
-<p>Our causal algebra is essentially a cross-product of more basic components:</p>
-<ul>
-<li><code>T</code>: An Interval Algebra</li>
-<li><code>I</code>: A simple set of influence types</li>
-<li><code>D</code>: Directionalities</li>
-</ul>
-<p>The named relations are drawn from <code>T x I x D</code></p>
-<h2 id="t-interval-algebra">T: Interval Algebra</h2>
-<p>Note that RO already contains temporal relations for ordering
-occurrents. This is different from the Allen Algebra, as we take
-different relations as primitive.</p>
-<h2 id="i-influence">I: Influence</h2>
-<p>Influence pertains to whether or not the causal relation is regulatory; direction pertains to the directionality of the change of magnitude of the target.</p>
-<p>The influence is either regulatory or non-regulatory</p>
-<pre><code>I = {R,N}
+                <h1 id="defining-property-chains-involving-reflexivity">Defining Property Chains involving Reflexivity</h1>
+<p>The pattern here is</p>
+<pre><code> * &quot;&lt;R&gt; &lt;P&gt;&quot; &lt;- R o P
+    * &lt;R&gt;
 </code></pre>
-<p>A regulatory influence (R) is a causal relation that can be switched on or off to achieve some objective: for example, a cell regulating levels of a cytosolic chemical through the switching off of a GTPase with a GTPase inhibitor. A non-regulatory influence (N) is the complement of this, and is exemplified by two successive steps in a pathway, where the output of the first is required as input for the second. Although the relationship is causal, it is not regulatory as the required input for the second step is not purposefully withheld (or provided); the cell does not use this as a control mechanism.</p>
-<p>(Note that we assume influence one way or another; the algebra does not permit non-influential/causal relations; these could be done separately using Allen).</p>
-<p>The following primitive rules hold:</p>
+<p>When this ODP is used, the property chain axiom should be tagged with
+an <a href="http://purl.obolibrary.org/obo/RO_0002582">is a defining property chain axiom where second argument is reflexive</a> axiom.</p>
+<p>In this case, the parent relation is a grouping relation for query purposes. Consider:</p>
 <ul>
-<li><code>R o R → R</code></li>
-<li><code>R o N → R</code></li>
-<li><code>N o R → R</code></li>
-<li><code>N o N → N</code></li>
+<li>http://purl.obolibrary.org/obo/RO_0002177 'attached to part of'<ul>
+<li>http://purl.obolibrary.org/obo/RO_0002371 'attached to'</li>
 </ul>
-<p>i.e. regulation is ‘infectious’. Note this may seem excessively permissive: a single regulatory link in a very long chain of causal relations renders the entire chain causal. We leave it to individual applications to determine both the degree of causal influence and the extend to which a regulatory component contributes. This may be via probabilistic or quantitive reasoning. This is outside the scope of this symbolic boolean algebra which seeks merely to determine logical potential.</p>
-<h2 id="direction">Direction</h2>
-<p>The direction is positive, negative or undeclared/neutral/generic</p>
-<pre><code>Direction = {+1, -1, 0}
+</li>
+</ul>
+<p>Consider a ligament or tendon attached to some projection P that is
+part of a bone B, that is part of the limb skeleton. We may be
+interested in all attachmed structures for any part of the body, and
+this named property chain provides a convenient way of querying for it.</p>
+<p>In all cases of this ODP, the parent property can be safely 'unfolded'
+away with no loss of information. i.e. expanded to an actual chain
+with two property expressions or assertions.</p>
+<p>The placement of the base form as a child of the parent is justified
+via the local reflexivity of the 2nd argument.</p>
+<h2 id="local-reflexivity">Local Reflexivity</h2>
+<p>In many formal treatments of relations, the Reflexivity characteristic
+is frequently used. For example, in mereology, 'part of' is frequently
+characterized as reflexive. This can seem confusing when compared
+with everyday usage (no one typically considers an object to be part
+of itself). However, it is convenient from the point of view of
+mathematical formulation. A 'proper R' sub-relation is often
+introduced, e.g. 'proper part of'.</p>
+<p>(We typically do not include a 'proper' form of the relation. This is
+because it inflates the ontology, and complicates reasoning. Also, it
+does not actually add information or provide real utility or intuition).</p>
+<p>We rarely if ever declare a relation to be reflexive. Reflexivity is
+incompatible with domain and range assertions. Consider:</p>
+<pre><code>  ObjectProperty: P
+   Characteristics: Reflexive
+   Domain: C
+  Class: C
+   DisjointWith: D
 </code></pre>
-<p>Although all actual regulatory relationships have a direction, we include the zero state here to assist with defining a formalism that accounts for unknown states.</p>
-<p>The primitive property chains are obtained through arithmetic multiplication; e.g. </p>
-<pre><code>+1 ∘ +1 → +1
-+1 ∘ -1 → -1
--1 ∘ +1 → -1
--1 ∘ -1 → +1
- 0 ∘ _   → 0
-_  ∘ 0   → 0
+<p>reflexivity of P literally means that every individual in the domain
+stands in a P relation to itself. This would include any instances of
+D. However, it an instance of D cannot be the subject of a P relation,
+hence D is unsatisfiable.</p>
+<p>This is rarely a concern in formal treatments, where a restricted
+domain is assumed; however, RO covers all domains so full reflexivity
+is almost always inappropriate.</p>
+<p>Instead, here we would make use of a 'local reflexivity' axiom. E.g.</p>
+<pre><code>  ObjectProperty: P
+   Domain: C
+  Class: C
+   DisjointWith: D
+   SubClassOf: P Self
 </code></pre>
-<p>Here ‘_’ is a wildcard, and direction can be inserted. </p>
-<h2 id="directness">Directness</h2>
-<p>For any pair of atomic activities p and q, if p has some
-causal influence on q then it can only stand in two possible
-directness relationships to q</p>
-<ul>
-<li>D (aka direct): if there is a physical interaction involving participants of p and q</li>
-<li>I (aka indirect): p precedes q, if there is NO physical interaction involving participants of p and q</li>
-</ul>
-<h2 id="cross-product">Cross-Product</h2>
-<p>Our set of causal relations is therefore drawn from</p>
-<pre><code>T ×  I ×  D
-</code></pre>
-<p>The following names are used for members of the cross-product</p>
-<ul>
-<li><code>directly positively regulates → &lt;D,R,+1&gt;</code></li>
-<li><code>directly negatively regulates → &lt;D,R,-1&gt;</code></li>
-<li><code>indirectly positively regulates → &lt;I,R,+1&gt;</code></li>
-<li><code>indirectly negatively regulates → &lt;I,R,-1&gt;</code></li>
-<li><code>regulates → &lt;*,R,0&gt;</code></li>
-<li><code>positively regulates → &lt;*,R,+1&gt;</code></li>
-<li><code>negatively regulates → &lt;*,R,-1&gt;</code></li>
-<li><code>directly provides input for → &lt;D,N,+1&gt;</code></li>
-<li><code>indirectly provides input for → &lt;I,N,+1&gt;</code></li>
-<li><code>provides input for → &lt;*,N,+1&gt;</code></li>
-<li><code>immediately causally upstream of → &lt;D,*,0&gt;</code></li>
-</ul>
-<p>TODO: add PURLs for the above.</p>
-<p>Note that unidirectional implication is used to leave open the use of different terms for the same members of the cross-product when applied to different domains.</p>
-<p>We also use the following sub-relations when both p and q are elemental (in the case of GO, these are GO MFs):</p>
-<ul>
-<li>directly activates → <D,R,+1></li>
-<li>directly inhibits → <D,R,-1></li>
-<li>indirectly activates → <I,R,+1></li>
-<li>indirectly inhibits → <I,R,-1></li>
-</ul>
-<h3 id="composition-rules">Composition rules</h3>
-<p>Composition rules for the cross-product follow naturally from the individual composition rules of the individual elements.</p>
-<p>We can also derive:</p>
-<ul>
-<li><code>regulates o part_of → regulates</code> (DEPRECATED)</li>
-<li><code>ends_with o regulates → regulates</code> </li>
-</ul>
-<p>The first follows from our rules above:  processual part of is <P,*,*> (if p is part of q it is playing some causal role in it). So we have &lt;<em>,R,0&gt; o <P,*,*> →  &lt;</em>,R,0&gt;.</p>
+<p>In practice we may not have asserted all cases of local reflexivity (TODO: tracker link).</p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../ro-sio-bridge/" class="btn btn-neutral float-right" title="SIO">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../ro-neuro/" class="btn btn-neutral" title="RO Neuron"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -280,10 +235,6 @@ directness relationships to q</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ro-neuro/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../ro-sio-bridge/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
